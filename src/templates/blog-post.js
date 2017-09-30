@@ -8,7 +8,7 @@ export default function Template({
 }) {
   const { markdownRemark: post } = data; // data.markdownRemark holds our post data
   return (
-    <div className="blog-post-container" style={{ backgroundImage: 'url('+post.frontmatter.bg+')' }}>
+    <div className="blog-post-container" style={{ backgroundImage: post.frontmatter.bg }}>
       <Helmet title={`Ooer - ${post.frontmatter.title}`} />
       <div className="blog-post">
         <h1>{post.frontmatter.title}</h1>

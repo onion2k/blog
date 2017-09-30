@@ -2,7 +2,7 @@
 path: "/react/record"
 date: "2017-09-03T17:12:33.962Z"
 title: "React Stuff 3"
-bg: "https://source.unsplash.com/G7VN8NadjO0"
+bg: "url(https://source.unsplash.com/G7VN8NadjO0)"
 ---
 
 Aliquot erat satis an sed is. Qui pretax incorrupt cu, in venire sapient vix et is. Pertinax constitutor it, met et sumo preceptor, qui ex chord dolorous. Facer alia pip singles et jus, his luv abet erupt anti pam at.

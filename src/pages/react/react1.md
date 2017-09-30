@@ -2,7 +2,7 @@
 path: "/react/comps"
 date: "2017-09-01T17:12:33.962Z"
 title: "React Stuff 1"
-bg: "https://source.unsplash.com/5GwLlb-_UYk"
+bg: "url(https://source.unsplash.com/5GwLlb-_UYk)"
 ---
 
 Assentor conch cuter ex sea, us no nulls laborer alter, erupt probates me. Ne per oblique insolent elif end, out sit doming volt put sentential, in triton civics pair roque usu. Et vires separate has. Sentential necessity alibis cel is me, sea ad legumes cote ties dolors. His emus edited id, nostrum commune patria quid sea an.

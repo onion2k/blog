@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import '../css/reset.css';
 import '../css/index.css';
+import '../css/reset.css';
 
 const Header = () => (
   <nav>
-    <Link to="/">Ooer Blog</Link>
+    <Link to="/">&larr; Back</Link>
+    <a className="right" href="https://www.ooer.com/">Ooer</a>
   </nav>
 )
 

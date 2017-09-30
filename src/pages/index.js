@@ -14,13 +14,14 @@ export default function Index({
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-            <div className="blog-post-preview" key={post.id} style={{ backgroundImage: 'url('+post.frontmatter.bg+')'}}>
+            <div className="blog-post-preview" key={post.id} style={{ backgroundImage: post.frontmatter.bg }}>
               <Link to={post.frontmatter.path}>
                 <h1 className="blog-post-title">
                   {post.frontmatter.title}
                 </h1>
                 <p className="blog-post-date">{post.frontmatter.date}</p>
                 <p className="blog-post-excerpt">{post.excerpt}</p>
+                <p className="blog-post-link">Read {post.frontmatter.title}</p>
               </Link>
             </div>
           );
