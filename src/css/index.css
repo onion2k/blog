@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded');
+
+body {
+    font-family: 'Encode Sans Expanded';
+}
+
+nav {
+    font-family: 'Encode Sans Expanded';
+    background-color: #000;
+    padding: 15px;
+    margin-bottom: 1vh;
+}
+
+nav > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-preview {
+    font-family: 'Encode Sans Expanded';
+    background-color: #444;
+    color: #fff;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog-post-preview > a {
+    background-color: rgba(0,0,0,0.15);
+    color: #fff;
+    text-decoration: none;    
+    padding: 30px;
+    width: 50%;
+    text-align: justify;
+    align-self: center;
+    transition: background-color 0.15s linear;
+}
+
+@media (max-width: 600px) {
+    .blog-post-preview {
+        min-height: 40vh;
+    }
+        
+    .blog-post-preview > a {
+        background-color: rgba(0,0,0,0.85);
+        padding: 15px;
+        width: 90%;
+    }
+}
+
+.blog-post-preview > a:hover {
+    background-color: rgba(0,0,0,0.85);
+}
+
+h1.blog-post-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.blog-post-date {
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 0.5rem;
+}
+
+.blog-post-excerpt {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    letter-spacing: 0.075rem;
+    font-size: 0.7rem;
+}
+
+.blog-post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: 100vw auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: #fff;
+}
+
+.blog-post {
+    padding: 30px;
+    max-width: 60vw;
+    min-height: 100vh;
+    text-align: justify;
+    font-family: 'Encode Sans Expanded';
+    letter-spacing: 0.075rem;
+    font-size: 0.8rem;
+    background-color: rgba(0,0,0,0.85);
+}

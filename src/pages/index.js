@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-// import '../css/index.css'; // add some style if you want!
+import '../css/index.css'; // add some style if you want!
 
 export default function Index({
   data
@@ -10,16 +10,18 @@ export default function Index({
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
-      {posts
+      { posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node: post }) => {
           return (
-            <div className="blog-post-preview" key={post.id}>
-              <h1>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h1>
-              <h2>{post.frontmatter.date}</h2>
-              <p>{post.excerpt}</p>
+            <div className="blog-post-preview" key={post.id} style={{ backgroundImage: 'url('+post.frontmatter.bg+')'}}>
+              <Link to={post.frontmatter.path}>
+                <h1 className="blog-post-title">
+                  {post.frontmatter.title}
+                </h1>
+                <p className="blog-post-date">{post.frontmatter.date}</p>
+                <p className="blog-post-excerpt">{post.excerpt}</p>
+              </Link>
             </div>
           );
         })}
@@ -38,6 +40,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            bg
           }
         }
       }
