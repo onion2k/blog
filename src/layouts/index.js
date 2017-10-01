@@ -6,6 +6,8 @@ import Helmet from 'react-helmet'
 import '../css/index.css';
 import '../css/reset.css';
 
+import '../obs.js';
+
 const Header = () => (
   <nav>
     <Link to="/">&larr; Back</Link>
