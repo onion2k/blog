@@ -29,6 +29,7 @@ nav > a {
 }
 
 .blog-post-preview {
+    position: relative;
     font-family: 'Encode Sans Expanded';
     background-color: #444;
     color: #fff;
@@ -42,9 +43,9 @@ nav > a {
     background-size: cover;
 }
 
-.blog-post-preview > a {
-    background-color: rgba(0,0,0,0.15);
-    color: #fff;
+.blog-post-preview > a.blog-post-link {
+    background-color: rgba(255,255,255,0.15);
+    color: #000;
     text-decoration: none;    
     padding: 30px;
     width: 50%;
@@ -59,14 +60,14 @@ nav > a {
     }
         
     .blog-post-preview > a {
-        background-color: rgba(0,0,0,0.85);
+        background-color: rgba(255,255,255,0.85);
         padding: 15px;
         width: 90%;
     }
 }
 
-.blog-post-preview > a:hover {
-    background-color: rgba(0,0,0,0.85);
+.blog-post-preview > a.blog-post-link:hover {
+    background-color: rgba(255,255,255,0.85);
 }
 
 h1.blog-post-title {
@@ -89,7 +90,7 @@ h1.blog-post-title {
     font-size: 0.7rem;
 }
 
-.blog-post-link {
+.blog-post-read-more {
     text-align: right;
     margin-top: 15px;
     margin-bottom: 0;
@@ -99,6 +100,19 @@ h1.blog-post-title {
     font-size: 0.5rem;    
 }
 
+.blog-post-bg-attribution {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    min-width: 20vw;
+    padding: 5px 15px;
+    background-color: rgba(255,255,255,0.5);
+    color: #000;
+    font-size: 0.75rem;
+    font-variant: small-caps;
+    text-decoration: none;
+}
+
 .blog-post-container {
     display: flex;
     flex-direction: column;
@@ -106,8 +120,9 @@ h1.blog-post-title {
     background-size: 100vw auto;
     background-position: top center;
     background-repeat: no-repeat;
-    background-color: #000;
-    color: #fff;
+    background-attachment: fixed;
+    background-color: #fff;
+    color: #000;
     padding-top: 15px;
 }
 
@@ -119,5 +134,5 @@ h1.blog-post-title {
     font-family: 'Encode Sans Expanded';
     letter-spacing: 0.075rem;
     font-size: 0.8rem;
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(255,255,255,0.85);
 }

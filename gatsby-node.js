@@ -20,6 +20,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             path
             title
             bg
+            bgLink
+            bgTitle
+            bgAuthor
           }
         }
       }

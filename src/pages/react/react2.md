@@ -2,7 +2,10 @@
 path: "/react/links"
 date: "2017-09-02T17:12:33.962Z"
 title: "React Stuff 2"
-bg: "linear-gradient(to left, #642b73, #c6426e)"
+bg: "linear-gradient(to right, #000000, #e5008d, #ff070b)"
+bgLink: "https://uigradients.com/#Shift"
+bgTitle: "Shift"
+bgAuthor: "uiGradients"
 ---
 
 I mea incident dissents philosophy, qui decant solute quads. Fibulas perpetual compere hens ex. Ei vis putto is aliquot. Audio laureate cel, et molls incident eons, use cu boron copies. Loren audit ad met, bel at incident mol sat ester.
