@@ -41,10 +41,12 @@ nav > a {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 .blog-post-preview > a.blog-post-link {
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,255,255,0.85);
     color: #000;
     text-decoration: none;    
     padding: 30px;
@@ -52,6 +54,8 @@ nav > a {
     text-align: justify;
     align-self: center;
     transition: background-color 0.15s linear;
+    border-radius: 5px;
+
 }
 
 @media (max-width: 600px) {
@@ -64,10 +68,6 @@ nav > a {
         padding: 15px;
         width: 90%;
     }
-}
-
-.blog-post-preview > a.blog-post-link:hover {
-    background-color: rgba(255,255,255,0.85);
 }
 
 h1.blog-post-title {
