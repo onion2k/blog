@@ -62,9 +62,9 @@ nav > a {
     .blog-post-preview {
         min-height: 40vh;
     }
-        
-    .blog-post-preview > a {
-        background-color: rgba(255,255,255,0.85);
+
+    .blog-post-preview > a.blog-post-link {
+        margin: 15px 0 50px 0;
         padding: 15px;
         width: 90%;
     }
@@ -135,4 +135,13 @@ h1.blog-post-title {
     letter-spacing: 0.075rem;
     font-size: 0.8rem;
     background-color: rgba(255,255,255,0.85);
+}
+
+@media (max-width: 600px) {
+
+    .blog-post {
+        margin: 15px 0 50px 0;
+        padding: 15px;
+        max-width: 90%;
+    }
 }
