@@ -16,9 +16,7 @@ export default function Index({
           return (
             <div className="blog-post-preview" key={post.id} style={{ backgroundImage: post.frontmatter.bg }}>
               <Link className="blog-post-link" to={post.frontmatter.path}>
-                <h1 className="blog-post-title">
-                  {post.frontmatter.title}
-                </h1>
+                <h1 className="blog-post-title">{post.frontmatter.title}</h1>
                 <p className="blog-post-date">{post.frontmatter.date}</p>
                 <p className="blog-post-excerpt">{post.excerpt}</p>
                 <p className="blog-post-read-more">Read {post.frontmatter.title}</p>
@@ -33,7 +31,7 @@ export default function Index({
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 15, sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(limit: 2, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)
