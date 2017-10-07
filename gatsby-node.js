@@ -49,9 +49,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
      */
     const posts = graphqlResults.data.allMarkdownRemark.edges;
     const published = posts.filter(post => !post.node.frontmatter.draft);
-    const drafts = posts.filter(post => post.node.frontmatter.draft);
+    const drafts = []; //posts.filter(post => post.node.frontmatter.draft);
 
-    //createTagPages(createPage, published);
+    createTagPages(createPage, published);
     createPagination(createPage, published, `/page`);
     //createPagination(createPage, drafts, `/drafts/page`);
 
@@ -78,46 +78,46 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   /**
    * Create pages for tags
    */
-  // function createTagPages (createPage, edges) {
+  function createTagPages (createPage, edges) {
 
-  //   const tagTemplate = path.resolve(`src/templates/blog-tags.js`);
-  //   const posts = {};
+    const tagTemplate = path.resolve(`src/templates/blog-tags.js`);
+    const posts = {};
 
-  //   console.log("Tags");
+    console.log("Tags");
     
-  //   edges
-  //     .forEach(({ node }) => {
-  //       if (node.frontmatter.tags) {
-  //         node.frontmatter.tags.split(', ')
-  //           .forEach(tag => {
-  //             if (!posts[tag]) {
-  //               posts[tag] = [];
-  //             }
-  //             posts[tag].push(node);
-  //           });
-  //       }
-  //     });
+    edges
+      .forEach(({ node }) => {
+        if (node.frontmatter.tags) {
+          node.frontmatter.tags.split(', ')
+            .forEach(tag => {
+              if (!posts[tag]) {
+                posts[tag] = [];
+              }
+              posts[tag].push(node);
+            });
+        }
+      });
 
-  //   Object.keys(posts)
-  //     .forEach(tagName => {
+    Object.keys(posts)
+      .forEach(tagName => {
 
-  //       const pageSize = 5;
-  //       const pagesSum = Math.ceil(posts[tagName].length / pageSize);
+        const pageSize = 5;
+        const pagesSum = Math.ceil(posts[tagName].length / pageSize);
 
-  //       for (let page = 1; page <= pagesSum; page++) {
-  //         createPage({
-  //           path: page === 1 ? `/tag/${tagName}` : `/tag/${tagName}/page/${page}`,
-  //           component: tagTemplate,
-  //           context: {
-  //             posts: paginate(posts[tagName], pageSize, page),
-  //             tag: tagName,
-  //             pagesSum,
-  //             page
-  //           }
-  //         })
-  //       }
-  //     });
-  // };
+        for (let page = 1; page <= pagesSum; page++) {
+          createPage({
+            path: page === 1 ? `/tag/${tagName}` : `/tag/${tagName}/page/${page}`,
+            component: tagTemplate,
+            context: {
+              posts: paginate(posts[tagName], pageSize, page),
+              tag: tagName,
+              pagesSum,
+              page
+            }
+          })
+        }
+      });
+  };
 
   /**
    * Create pagination for posts
@@ -128,17 +128,19 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     
     const pageSize = 5;
     const pagesSum = Math.ceil(edges.length / pageSize);
+    var displayPage;
 
     for(let page = 0; page < pagesSum; page++) {
+      displayPage = page+1;
       createPage({
-        path: `${pathPrefix}/${page}`,
+        path: `${pathPrefix}/${displayPage}`,
         component: pageTemplate,
         context: {
           posts: paginate(edges, pageSize, page).map(({node}) => node),
           page,
           pagesSum,
-          prevPath: (page - 1) > 0 ? `${pathPrefix}/${page - 1}` : null,
-          nextPath: (page + 1) < pagesSum ? `${pathPrefix}/${page + 1}` : null,
+          prevPath: (displayPage - 1) > 1 ? `${pathPrefix}/${displayPage - 1}` : null,
+          nextPath: (displayPage + 1) < (pagesSum+1) ? `${pathPrefix}/${displayPage+1}` : null,
         }
       })
     }
