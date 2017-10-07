@@ -6,6 +6,7 @@ bg: "url(https://source.unsplash.com/_Qin-dMNgFs)"
 bgLink: "https://unsplash.com/photos/_Qin-dMNgFs"
 bgTitle: "Vibrant Grafitti"
 bgAuthor: "Daniel Posthuma"
+tags: "react"
 ---
 
 Aliquot erat satis an sed is. Qui pretax incorrupt cu, in venire sapient vix et is. Pertinax constitutor it, met et sumo preceptor, qui ex chord dolorous. Facer alia pip singles et jus, his luv abet erupt anti pam at.

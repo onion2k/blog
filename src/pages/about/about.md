@@ -6,6 +6,7 @@ bg: "url(https://source.unsplash.com/xMScfzgJ7_c)"
 bgLink: "https://unsplash.com/photos/xMScfzgJ7_c"
 bgTitle: "Background image"
 bgAuthor: "Luisa Rusche"
+tags: "about"
 ---
 
 Lore gypsum dolor sit abet, sac bola medico ratites cu is, edit ileum et prig. Digit non my unique vis ex, postulant herd relit product jus, put aid discing intel beget cons quainter. Mea null moderatos omit taunter id. Vis in dam lupus viv enum is, id sones placemat vis, quod parter appetite id sea. Met consequent efficient cons cuter id, prig emir mayor um be, lauded ad modem principe phi id.
