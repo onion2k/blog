@@ -31,7 +31,7 @@ export default function Index({
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 2, sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(limit: 15, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)
