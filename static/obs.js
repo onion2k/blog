@@ -30,7 +30,7 @@ var options = {
 document.addEventListener("DOMContentLoaded", function(event) {
 
     var observer = new window.IntersectionObserver(callback, options);
-    var targets = document.querySelectorAll('a.blog-post-link');
+    var targets = document.querySelectorAll('div.blog-post-link');
 
     targets.forEach(function(b){
         observer.observe(b);
