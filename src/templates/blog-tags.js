@@ -4,6 +4,8 @@ import Helmet from 'react-helmet';
 
 import '../css/index.css'; // make it pretty!
 
+import PostPreview from '../components/PostPreview';
+
 export default function Tags({ pathContext, data }) {
 
     const { title, siteUrl } = data.site.siteMetadata;
@@ -11,27 +13,18 @@ export default function Tags({ pathContext, data }) {
   
     return (
         <section>
-            <div className="blog-section">
+            <nav className="blog-section">
                 <span className="blog-section-link">
                     Tag / {tag}
                 </span>
-            </div>
+            </nav>
 
             <div className="posts">
-            { posts
-                .map((post) => {
-                    return (
-                        <div className="blog-post-preview" key={post.id} style={{ backgroundImage: post.frontmatter.bg }}>
-                            <Link className="blog-post-link" to={post.frontmatter.path}>
-                                <h1 className="blog-post-title">{post.frontmatter.title}</h1>
-                                <p className="blog-post-date">{post.frontmatter.date}</p>
-                                <p className="blog-post-excerpt">{post.excerpt}</p>
-                                <p className="blog-post-read-more">Read {post.frontmatter.title}</p>
-                            </Link>
-                            <a className="blog-post-bg-attribution" href={post.frontmatter.bgLink}>{post.frontmatter.bgTitle} by {post.frontmatter.bgAuthor}</a>
-                        </div>
-                    );
-                })
+            { 
+                posts
+                    .map((post) => {
+                        return (<PostPreview key={post.frontmatter.path} {...post} />);
+                    })
             }
             </div>
         </section>

@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import '../css/index.css'; // add some style if you want!
+import PostPreview from '../components/PostPreview';
 
 export default function Index({
   data
@@ -10,36 +11,18 @@ export default function Index({
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="blog-posts">
-      { posts
-        .filter(post => post.node.frontmatter.title.length > 0)
+
+      <nav className="blog-section">
+        <span className="blog-section-link newer-posts"></span>
+        <Link className="blog-section-link older-posts" to="/archive/2">Older Posts <span aria-hidden="true">→</span></Link>
+      </nav>
+
+      { 
+        posts
         .map(({ node: post }) => {
-
-          var tags = null;
-          if (post.frontmatter.tags) {
-            tags = post.frontmatter.tags.split(',').map((tag)=>{
-              return <Link to={'tag/'+tag}>{tag}</Link>
-            })
-          }
-
-          return (
-            <div className="blog-post-preview" key={post.id} style={{ backgroundImage: post.frontmatter.bg }}>
-              <Link className="blog-post-link" to={post.frontmatter.path}>
-                <h1 className="blog-post-title">{post.frontmatter.title}</h1>
-                <p className="blog-post-date">{post.frontmatter.date}</p>
-                <p className="blog-post-excerpt">{post.excerpt}</p>
-                <div className="blog-post-tags">{tags}</div>
-                <div className="blog-post-read-more">Read {post.frontmatter.title}</div>
-              </Link>
-              <a className="blog-post-bg-attribution" href={post.frontmatter.bgLink}>{post.frontmatter.bgTitle} by {post.frontmatter.bgAuthor}</a>
-            </div>
-          );
-        })}
-
-        <div className="blog-section">
-          <Link className="blog-section-link" to="/archive/2">
-            Older Posts
-          </Link>
-        </div>
+          return (<PostPreview key={post.frontmatter.path} {...post} />);
+        })
+      }
 
     </div>
   );

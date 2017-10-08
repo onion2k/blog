@@ -8,7 +8,7 @@ import '../css/reset.css';
 
 const Header = () => (
   <nav>
-    <a className="right" href="https://www.ooer.com/">Ooer</a>
+    <a href="https://www.ooer.com/">Ooer</a>
   </nav>
 )
 

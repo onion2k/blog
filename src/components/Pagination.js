@@ -10,7 +10,6 @@ const Pagination = ({ prevPath, nextPath, page, pagesSum }) =>
         </Link> : <Link className="blog-section-link newer-posts" to="/">
           <span aria-hidden="true">←</span> Home
         </Link>}
-      <span className="blog-section-link page-number">{`Page ${page+1} of ${pagesSum}`}</span>
       {nextPath ?
         <Link className="blog-section-link older-posts" to={nextPath}>
           Older Posts <span aria-hidden="true">→</span>
