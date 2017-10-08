@@ -6,7 +6,7 @@ bg: "url(https://source.unsplash.com/Bn0IRDiHhOo)"
 bgLink: "https://unsplash.com/photos/Bn0IRDiHhOo"
 bgTitle: "Background image"
 bgAuthor: "Eike Klingspohn"
-tags: "react"
+tags: "react,static site generators,grid"
 ---
 
 Assentor conch cuter ex sea, us no nulls laborer alter, erupt probates me. Ne per oblique insolent elif end, out sit doming volt put sentential, in triton civics pair roque usu. Et vires separate has. Sentential necessity alibis cel is me, sea ad legumes cote ties dolors. His emus edited id, nostrum commune patria quid sea an.

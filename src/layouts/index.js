@@ -8,7 +8,6 @@ import '../css/reset.css';
 
 const Header = () => (
   <nav>
-    <Link to="/">&larr; Back</Link>
     <a className="right" href="https://www.ooer.com/">Ooer</a>
   </nav>
 )

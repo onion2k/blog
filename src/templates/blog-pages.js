@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
+import Pagination from '../components/Pagination';
+
 export default function Template({
   pathContext, data // this prop will be injected by the GraphQL query we'll write in a bit
 }) {
@@ -12,10 +14,12 @@ export default function Template({
             <div className="medium-8 medium-offset-2">
                 <div className="posts">
 
+                <Pagination
                     page={page}
                     pagesSum={pagesSum}
                     prevPath={prevPath}
                     nextPath={nextPath}
+                />
 
         { posts
             .map((post) => {
@@ -33,6 +37,12 @@ export default function Template({
             })
         }
 
+        <Pagination
+            page={page}
+            pagesSum={pagesSum}
+            prevPath={prevPath}
+            nextPath={nextPath}
+        />
                 </div>
             </div>
         </section>

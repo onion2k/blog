@@ -1,5 +1,5 @@
 const path = require('path');
-const postsPerPage = 10;
+const postsPerPage = 6;
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
 
@@ -101,8 +101,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
         const pageSize = postsPerPage;
         const pagesSum = Math.ceil(posts[tagName].length / pageSize);
-
-        console.log(tagName, posts[tagName].length);
         
         for (let page = 0; page < pagesSum; page++) {
           createPage({

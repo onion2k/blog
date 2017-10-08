@@ -45,13 +45,13 @@ nav > a {
     border-bottom: 1px solid #000;
 }
 
-.blog-post-preview > a.blog-post-link {
+.blog-post-preview > .blog-post-link {
     background-color: rgba(255,255,255,0.85);
     color: #000;
     text-decoration: none;    
     padding: 30px;
     width: 50%;
-    text-align: justify;
+    text-align: left;
     align-self: center;
     transition: background-color 0.15s linear;
     border-radius: 5px;
@@ -84,13 +84,28 @@ h1.blog-post-title {
 }
 
 .blog-post-excerpt {
+    text-align: justify;
     margin-bottom: 0;
     padding-bottom: 0;
     letter-spacing: 0.075rem;
     font-size: 0.7rem;
 }
 
+.blog-post-tags {
+    float: left;
+    width: 50%;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0rem;
+    font-size: 0.5rem;    
+}
+
 .blog-post-read-more {
+    float: right;
+    width: 50%;
     text-align: right;
     margin-top: 15px;
     margin-bottom: 0;
@@ -98,6 +113,12 @@ h1.blog-post-title {
     text-transform: uppercase;
     letter-spacing: 0.15rem;
     font-size: 0.5rem;    
+}
+
+
+
+.blog-post-tags > a {
+    margin-right: 5px;
 }
 
 .blog-post-bg-attribution {
@@ -144,4 +165,49 @@ h1.blog-post-title {
         padding: 15px;
         max-width: 90%;
     }
+}
+
+
+
+
+
+.blog-section {
+    font-family: 'Encode Sans Expanded';
+    background-color: #444;
+    color: #fff;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+
+.blog-section > .blog-section-link {
+    color: #fff;
+    text-decoration: none;    
+    padding: 15px;
+    align-self: center;
+    transition: background-color 0.15s linear;
+}
+
+.page-number {
+    text-align: center;
+    flex: 3;
+}
+
+.newer-posts {
+    align-self: flex-start;
+    flex: 1;
+}
+
+.older-posts {
+    align-self: flex-end;
+    text-align: right;
+    flex: 1;
 }
