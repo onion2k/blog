@@ -1,4 +1,5 @@
 const path = require('path');
+const postsPerPage = 10;
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
 
@@ -48,12 +49,10 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
      * Separate published posts and and drafts
      */
     const posts = graphqlResults.data.allMarkdownRemark.edges;
-    const published = posts.filter(post => !post.node.frontmatter.draft);
-    const drafts = []; //posts.filter(post => post.node.frontmatter.draft);
+    const published = posts;
 
     createTagPages(createPage, published);
-    createPagination(createPage, published, `/page`);
-    //createPagination(createPage, drafts, `/drafts/page`);
+    createPagination(createPage, published, `/archive`);
 
     /**
      * Create pages for each markdown file.
@@ -72,7 +71,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       });
     });
 
-    return drafts;
+    return [];
+
   }
 
   /**
@@ -82,13 +82,11 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     const tagTemplate = path.resolve(`src/templates/blog-tags.js`);
     const posts = {};
-
-    console.log("Tags");
     
     edges
       .forEach(({ node }) => {
         if (node.frontmatter.tags) {
-          node.frontmatter.tags.split(', ')
+          node.frontmatter.tags.split(',')
             .forEach(tag => {
               if (!posts[tag]) {
                 posts[tag] = [];
@@ -101,12 +99,14 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     Object.keys(posts)
       .forEach(tagName => {
 
-        const pageSize = 5;
+        const pageSize = postsPerPage;
         const pagesSum = Math.ceil(posts[tagName].length / pageSize);
 
-        for (let page = 1; page <= pagesSum; page++) {
+        console.log(tagName, posts[tagName].length);
+        
+        for (let page = 0; page < pagesSum; page++) {
           createPage({
-            path: page === 1 ? `/tag/${tagName}` : `/tag/${tagName}/page/${page}`,
+            path: page === 0 ? `/tag/${tagName}` : `/tag/${tagName}/page/${page+1}`,
             component: tagTemplate,
             context: {
               posts: paginate(posts[tagName], pageSize, page),
@@ -126,7 +126,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
     const pageTemplate = path.resolve(`src/templates/blog-pages.js`);
     
-    const pageSize = 5;
+    const pageSize = postsPerPage;
     const pagesSum = Math.ceil(edges.length / pageSize);
     var displayPage;
 

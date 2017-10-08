@@ -2,7 +2,7 @@
 path: "/compiling-less-on-save"
 date: "2013-02-12T17:12:33.962Z"
 title: Compiling LESS on save.
-tags: "Development,DevOps"
+tags: Development,DevOps
 ---
 One of the technologies that I use daily is Less, the CSS compiler. It’s awesome. It let’s you compile your CSS using variables and mixins. But one problem with Less is using in the browser is a pain. And when things are painful, it’s a sign you should automate.
 

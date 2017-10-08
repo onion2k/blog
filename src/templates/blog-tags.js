@@ -1,10 +1,11 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import '../css/index.css'; // make it pretty!
 
-
 export default function Tags({ pathContext, data }) {
+
     const { title, siteUrl } = data.site.siteMetadata;
     const { posts, tag, pagesSum, page } = pathContext;
   
