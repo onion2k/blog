@@ -11,7 +11,7 @@ tags: "react"
 
 If you want to write a blog then you need a way of building pages, rendering content, and publishing everything to the web. There are *a lot* of different blogging platforms from fully hosted Software As A Service applications to incredibly simple shell scripts that take content and turn it in to HTML pages.
 
-There are a couple of ways to do this. The old-school way is to load content in to a database and render each page when a user requests it. There are a stack of advantages to this method - it's easy to guard pagesand only show them to certain users (think admin seeing previews of pages), it's straightforward to integrate dynamic page content, and it's much simpler to host because it's PHP and PHP's great at working everywhere.
+There are a couple of ways to do this. The old-school way is to load content in to a database and render each page when a user requests it. There are a stack of advantages to this method - it's easy to guard pages and only show them to certain users (think admin seeing previews of pages), it's straightforward to integrate dynamic page content, and it's much simpler to host because it's PHP and PHP's great at working everywhere.
 
 The defacto blogging platform is [Wordpress](https://wordpress.com/). In many respects Wordpress is **awesome**. It's simple to use, not too hard to set up, and it scales pretty well. A default Wordpress site isn't going to survive being hugged to death by HN or hitting the Producthunt front page, but with a little tweaking (read 'installing a plugin') it'll scale up to cope with just about anything.
 
@@ -26,3 +26,29 @@ Gatsby is a bit different to other static site generators I've used in the past.
 Once the data is available to a GraphQL query the actual page generation process in Gatsby is very similar to any other static site generator. A node.js (or browser script) loops through all the available data sources creating pages and saving them out to a build directory. As part of this process many things can happen; images can be loaded and optimised, metadata can be generated, templates can be populated. Any pages that are needed in the final website can be created. In the case of blog.ooer.com that means a page for each article as well as paginated lists for archive content and pages for each tag that's used on the articles.
 
 GatsbyJS has an extensive API for hooking functions in to the build process to do whatever you might need. You can see how code is used by looking at the source for this site on its [Github repo](https://github.com/onion2k/blog).
+
+Installing Gatsby is really simple;
+
+```
+npm install -g gatsbyjs
+```
+
+Then you can initialise a blog using the default starter using;
+
+```
+gatsbyjs new blog && cd blog
+```
+
+That's all that's necessary to get started. You can see your blog locally using;
+
+```
+gatsby develop
+```
+
+You can also build a production version with;
+
+```
+gatsby build
+```
+
+While that's nice and all, and maybe good enough if you like a purple theme, you'll probably want to change a few things about the blog. To do this you'll need to create a new file in the root of the website directory called `gatsby-config.json`. The config file contains directives for GatsbyJS to use when it builds the static content.
