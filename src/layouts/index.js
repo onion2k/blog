@@ -20,7 +20,13 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-    />
+      link={[
+        { rel: 'icon', type: 'image/png', href: '/favicons/favicon.png' }
+      ]}
+    >
+      <html lang="en" />
+      <script src="/obs.js" />
+    </Helmet>
     <Header />
     <article>{children()}</article>
   </main>

@@ -27,13 +27,10 @@ var options = {
     threshold: buildThresholdList()
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
 
-    var observer = new window.IntersectionObserver(callback, options);
-    var targets = document.querySelectorAll('div.blog-post-link');
+var observer = new window.IntersectionObserver(callback, options);
+var targets = document.querySelectorAll('.blog-post-link');
 
-    targets.forEach(function(b){
-        observer.observe(b);
-    });
-    
+targets.forEach(function(b){
+    observer.observe(b);
 });

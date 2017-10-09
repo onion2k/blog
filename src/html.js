@@ -24,8 +24,6 @@ module.exports = class HTML extends React.Component {
       <html lang="en">
         <head>
           <meta charSet="utf-8" />
-          <link rel="icon" type="image/png" href="/favicons/favicon.png" />
-          <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico" /><![endif]-->
           <meta name="theme-color" content="#444444">
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
