@@ -43,7 +43,7 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src='obs.js'></script>
+          <script src='/obs.js'></script>
         </body>
       </html>
     )
