@@ -8,7 +8,7 @@ import '../css/reset.css';
 
 const Header = () => (
   <nav>
-    <a href="https://www.ooer.com/">Ooer</a>
+    <a href="https://www.ooer.com/" rel="nofollow noopener">Ooer</a>
   </nav>
 )
 
