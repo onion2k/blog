@@ -92,4 +92,6 @@ module.exports = {
 
 Now you can add a `<helmet>` component to any page that needs to change the header.
 
-[Part 2](/react/GatsyDataSources)
+The next thing that we need to do in order to have an actual working blog website is to add some content. For that we need to add a data source plugin.
+
+*Part 2 Coming Soon*
