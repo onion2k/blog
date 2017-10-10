@@ -1,7 +1,7 @@
 ---
 path: "/react/gatsbyjs"
 date: "2017-10-03T17:12:33.962Z"
-title: "GatsbyJS"
+title: "Getting Started With GatsbyJS"
 bg: "url(https://source.unsplash.com/Il92JPm4hl8)"
 bgLink: "https://unsplash.com/photos/Il92JPm4hl8"
 bgTitle: "Gramophone"
@@ -52,3 +52,44 @@ gatsby build
 ```
 
 While that's nice and all, and maybe good enough if you like a purple theme, you'll probably want to change a few things about the blog. To do this you'll need to create a new file in the root of the website directory called `gatsby-config.json`. The config file contains directives for GatsbyJS to use when it builds the static content.
+
+The minimum config that a site will need is a title and a description for the meta data. Gatsby takes these values from the siteMetadata in the config object. Optionally there's also an author tag, which is handy for a blog, and the siteUrl value that's used for generating relative links.
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Ooer`,
+    description: `Ooer description.`
+    author: 'Chris Neale',
+    siteUrl: `https://blog.ooer.com`,
+  },
+}
+```
+
+That's enough information to get the site running, but you can do much more with the config file. For example, if you want to add a plugin you can configure it in the `plugins` array.
+
+If you want to be in more control of the meta data, title, language, etc of your website then React Helmet is a very useful plugin. It enables you to define practically every aspect of the site's `<head>` block. To install it just grab the gatsby plugin from NPM;
+
+```
+npm install --save gatsby-plugin-react-helmet
+```
+
+Once that's done you need to add it to the plugins array in the config file.
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Ooer`,
+    description: `Ooer description.`
+    author: 'Chris Neale',
+    siteUrl: `https://blog.ooer.com`,
+  },
+  plugins: [
+  	`gatsby-plugin-react-helmet`,
+  ],
+}
+```
+
+Now you can add a `<helmet>` component to any page that needs to change the header.
+
+[Part 2](/react/GatsyDataSources)
