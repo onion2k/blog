@@ -21,10 +21,9 @@ module.exports = class HTML extends React.Component {
       )
     }
     return (
-      <html lang="en">
+      <html>
         <head>
           <meta charSet="utf-8" />
-          <meta name="theme-color" content="#444444">
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
             name="viewport"
@@ -41,7 +40,7 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src='/obs.js'></script>
+          <script src="/obs.js" async></script>
         </body>
       </html>
     )

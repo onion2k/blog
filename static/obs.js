@@ -27,10 +27,9 @@ var options = {
     threshold: buildThresholdList()
 }
 
-
 var observer = new window.IntersectionObserver(callback, options);
 var targets = document.querySelectorAll('.blog-post-link');
 
 targets.forEach(function(b){
     observer.observe(b);
-});
+});    

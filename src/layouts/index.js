@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import Obs from '../components/Obs.js';
-
 import '../css/reset.css';
 import '../css/index.css';
 import '../css/prismjs-twilight.css';
@@ -31,7 +29,6 @@ const TemplateWrapper = ({ children }) => (
     </Helmet>
     <Header />
     <article>{children()}</article>
-    <Obs />
   </main>
 )
 
