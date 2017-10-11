@@ -212,3 +212,7 @@ nav > a {
     text-align: right;
     flex: 1;
 }
+
+code {
+    font-size: 0.55rem;
+}

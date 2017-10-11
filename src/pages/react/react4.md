@@ -2,11 +2,11 @@
 path: "/react/gatsbyjs"
 date: "2017-10-03T17:12:33.962Z"
 title: "Getting Started With GatsbyJS"
-bg: "url(https://source.unsplash.com/Il92JPm4hl8)"
-bgLink: "https://unsplash.com/photos/Il92JPm4hl8"
-bgTitle: "Gramophone"
-bgAuthor: "Clem Onojeghuo"
-tags: "react"
+bg: "url(https://source.unsplash.com/_Qin-dMNgFs)"
+bgLink: "https://unsplash.com/photos/_Qin-dMNgFs"
+bgTitle: "Vibrant Grafitti"
+bgAuthor: "Daniel Posthuma"
+tags: "react, static site generators, gatsbyjs"
 ---
 
 If you want to write a blog then you need a way of building pages, rendering content, and publishing everything to the web. There are *a lot* of different blogging platforms from fully hosted Software As A Service applications to incredibly simple shell scripts that take content and turn it in to HTML pages.

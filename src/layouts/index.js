@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import '../css/index.css';
 import '../css/reset.css';
+import '../css/index.css';
+import '../css/prismjs-twilight.css';
 
 const Header = () => (
   <nav>

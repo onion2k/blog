@@ -2,8 +2,6 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
-import '../css/index.css'; // make it pretty!
-
 import PostPreview from '../components/PostPreview';
 
 export default function Tags({ pathContext, data }) {

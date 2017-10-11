@@ -1,12 +1,12 @@
 ---
 path: "/react/comps"
 date: "2017-09-01T17:12:33.962Z"
-title: "React Stuff 1"
-bg: "url(https://source.unsplash.com/Bn0IRDiHhOo)"
-bgLink: "https://unsplash.com/photos/Bn0IRDiHhOo"
-bgTitle: "Background image"
-bgAuthor: "Eike Klingspohn"
-tags: "react,static site generators,grid"
+title: "Starting With React"
+bg: "linear-gradient(to right, #fffbd5, #b20a2c)"
+bgLink: "https://uigradients.com/#Relaxingred"
+bgTitle: "Relaxing Red"
+bgAuthor: "uiGradients"
+tags: "react"
 ---
 
 Assentor conch cuter ex sea, us no nulls laborer alter, erupt probates me. Ne per oblique insolent elif end, out sit doming volt put sentential, in triton civics pair roque usu. Et vires separate has. Sentential necessity alibis cel is me, sea ad legumes cote ties dolors. His emus edited id, nostrum commune patria quid sea an.
