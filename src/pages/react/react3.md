@@ -17,6 +17,24 @@ Components in JSX are functionally Javascript clojures under the surface. This m
 
 What this means in practise is really that you should think of React component as mini applications that output code rather than elements on the page.
 
+To look at different ways of creating components and what we can do with them we need to start with the sort of basic React app container component that create-react-app might give us to start.
+
+```javascript
+import React from 'react';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+		This is the app container.
+      </div>
+    );
+  }
+}
+```
+
+This app is a component in itself. The `div` JSX renders an HTML div tag with a class of App and some text content. It's very basic, but it's only a demo. We want to populate it with a component of our own.
+
 There are two main ways to create a React component. They're effectively interchangable, but it's quite useful to think of them as separate as it makes it more obvious what each component is for.
 
 The first method is an anonymous function. It looks like this;
@@ -43,7 +61,7 @@ class MyComponent extends React.Component {
 
 In both cases the React library needs to be imported in to the current scope in order for JSX to work. In the first example however that's literally all that's necessary.
 
-To display either of the components we can simply import them in to a React app.
+To display either of the components we can simply import them in to our React app and use the component's JSX. It'll be replaced by the rendered HTML. 
 
 ```javascript{2,8}
 import React from 'react';
@@ -53,13 +71,51 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Test />
+        <MyComponent />
       </div>
     );
   }
 }
 ```
 
-There isn't much more to say about the anonymous component function. If all you need is to render some JSX to HTML then this option is ideal. It keeps the code simple, and consequently fast, but not appreciably faster than a component extension class. It's main advantage is its simplicity.
+What's changed is the addition of an `import` to bring the new component in to the application, and a JSX `<MyComponent />` self-closing element to render the output of the component's render function.  
+
+There isn't much more to say about the anonymous component function. If all you need is to render some HTML then this way of creating a component is ideal. Its advantage is its simplicity.
 
 The second way relies on extending the React component base class, which is a little more complicated, but affords the component a wealth of additional features such as lifetime callbacks, an optional constructor method, a way of managing the component's state, and more.
+
+If we need to manage state in a component then we need to add a constructor and initialise a state object.
+
+```javascript{4-8}
+import React from react;
+
+class MyComponent extends React.Component {
+	constructor(){
+		this.state = {
+			name: 'Ooer'
+		}
+	}
+	render(){
+		return (<h1 className='MyComponent'>My title, in JSX</h1>);
+	}
+}
+```
+
+Now when the component is initialised a state object will be created with a `name` property that we can access in the component's render method using `this.state.name`.
+
+```javascript{10}
+import React from react;
+
+class MyComponent extends React.Component {
+	constructor(){
+		this.state = {
+			name: 'Ooer'
+		}
+	}
+	render(){
+		return (<h1 className='MyComponent'>My title, {this.state.name}, in JSX</h1>);
+	}
+}
+```
+
+React's components are incredibly powerful. There are *a lot* more features that aren't covered here; we'll explore them in a later post.

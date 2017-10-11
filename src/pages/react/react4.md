@@ -76,7 +76,7 @@ npm install --save gatsby-plugin-react-helmet
 
 Once that's done you need to add it to the plugins array in the config file.
 
-```js
+```javascript{8-10}
 module.exports = {
   siteMetadata: {
     title: `Ooer`,
