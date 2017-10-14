@@ -1,6 +1,7 @@
-import React from "react"
+import React from "react";
 
 let stylesStr
+
 if (process.env.NODE_ENV === `production`) {
   try {
     stylesStr = require(`!raw-loader!../public/styles.css`)
@@ -11,15 +12,32 @@ if (process.env.NODE_ENV === `production`) {
 
 module.exports = class HTML extends React.Component {
   render() {
-    let css
+
+    let css;
+    let google;
     if (process.env.NODE_ENV === `production`) {
+
       css = (
         <style
           id="gatsby-inlined-css"
           dangerouslySetInnerHTML={{ __html: stylesStr }}
         />
-      )
+      );
+
+      google = (
+        <script src="/obs.js" async></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108057720-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-108057720-2');
+        </script>
+      );
+
     }
+
     return (
       <html>
         <head>
@@ -40,15 +58,7 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src="/obs.js" async></script>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108057720-2"></script>
-          <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-108057720-2');
-          </script>
+          {google}
         </body>
       </html>
     )
