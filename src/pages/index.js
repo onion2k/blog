@@ -23,13 +23,18 @@ export default function Index({
         })
       }
 
+      <nav className="blog-section">
+        <span className="blog-section-link newer-posts"></span>
+        <Link className="blog-section-link older-posts" to="/archive/2">Older Posts <span aria-hidden="true">→</span></Link>
+      </nav>
+
     </div>
   );
 }
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 6, sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(limit: 8, sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)

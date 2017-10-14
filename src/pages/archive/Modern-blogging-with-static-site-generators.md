@@ -3,10 +3,10 @@ path: "/static-site-generators"
 date: "2016-06-12T17:12:33.962Z"
 title: Modern blogging with static site generators
 tags: ""
-bg: "url(https://source.unsplash.com/_RHEaTLm1LU)"
-bgLink: "https://unsplash.com/photos/_RHEaTLm1LU"
-bgTitle: "Background image"
-bgAuthor: "Alex Read"
+bg: "linear-gradient(to right, #de6262, #ffb88c)"
+bgLink: "https://uigradients.com/#ALostMemory"
+bgTitle: "ALostMemory"
+bgAuthor: "uiGradients"
 
 ---
 I haven't bothered to keep track of the number of blogs I've set up for myself, for friends and professionally over the past 20 years. It's certainly a lot. Once, long ago, it was a matter of writing some custom PHP scripts and developing a database. Then came Wordpress and everything was made much, much easier. Once in a while I'd dip a toe in to a different platform, but I always came back to Wordpress. It was streets ahead of everything else for years.
