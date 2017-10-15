@@ -1,6 +1,6 @@
 ---
 path: "/react/gatsbyjs"
-date: "2017-10-03T17:12:33.962Z"
+date: "2017-09-17T17:12:33.962Z"
 title: "Getting Started With GatsbyJS"
 bg: "url(https://source.unsplash.com/_Qin-dMNgFs)"
 bgLink: "https://unsplash.com/photos/_Qin-dMNgFs"
