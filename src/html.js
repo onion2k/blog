@@ -15,7 +15,7 @@ module.exports = class HTML extends React.Component {
 
     let css;
     let google;
-    if (process.env.NODE_ENV === `production`) {
+    // if (process.env.NODE_ENV === `production`) {
 
       css = (
         <style
@@ -36,7 +36,7 @@ module.exports = class HTML extends React.Component {
         </script>
       );
 
-    }
+    // }
 
     return (
       <html>
