@@ -13,30 +13,29 @@ if (process.env.NODE_ENV === `production`) {
 module.exports = class HTML extends React.Component {
   render() {
 
+    console.log("Render");
+
     let css;
     let google;
-    if (process.env.NODE_ENV === `production`) {
 
-      css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
-        />
-      );
+    css = (
+      <style
+        id="gatsby-inlined-css"
+        dangerouslySetInnerHTML={{ __html: stylesStr }}
+      />
+    );
 
-      google = (
-        <script src="/obs.js" async></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108057720-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-108057720-2');
-        </script>
-      );
-
-    }
+    google = (
+      <script src="/obs.js" async></script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108057720-2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-108057720-2');
+      </script>
+    );
 
     return (
       <html>

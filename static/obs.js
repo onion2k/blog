@@ -1,3 +1,5 @@
+console.log('obs');
+
 var numSteps = 20.0;
 
 function buildThresholdList() {

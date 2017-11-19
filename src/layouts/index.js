@@ -29,6 +29,9 @@ const TemplateWrapper = ({ children }) => (
     </Helmet>
     <Header />
     <article>{children()}</article>
+
+    <script src="/obs.js" async></script>
+
   </main>
 )
 
