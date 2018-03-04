@@ -1,7 +1,7 @@
 ---
 path: "/why-i-use-webpack"
 date: "2018-02-24T12:13:33.962Z"
-title: "Webpack for Security"
+title: "Why I Use Webpack"
 bg: "linear-gradient(to right, #ad5389, #3c1053)"
 bgLink: "https://uigradients.com/#eXpresso"
 bgTitle: "eXpresso"
